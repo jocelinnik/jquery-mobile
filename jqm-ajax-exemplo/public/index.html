@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title> jQuery Mobile </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <body>
+        <div data-role="page">
+            <div data-role="header">
+                <h1> Exemplo Ajax </h1>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview" data-inset="true">
+                    <li><a href="pagina2.html">Página 2</a></li>
+                </ul><br>
+                <button id="testAjax" class="ui-btn">Click To Test</button>
+            </div>
+        </div>
+
+        <script>
+            $("#testAjax").click(function(){
+                $.ajax({
+                    url: "foo.json",
+                    success: function(result){
+                        console.log(result);
+                        $("#testAjax").html("Hello " + result.name);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

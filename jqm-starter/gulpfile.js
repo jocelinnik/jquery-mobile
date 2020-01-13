@@ -1,22 +1,20 @@
 var gulp = require("gulp");
 var concat = require("gulp-concat");
 var minify = require("gulp-minify");
-
+ 
 var js = [
     "./node_modules/jquery/dist/jquery.js",
-    "./node_modules/jquery-mobile/js/jquery.mobile.js",
-    "./app.js",
-    "./events.js"
+    "./events.js",
+    "./node_modules/jquery-mobile/dist/jquery.mobile.js",
+    "./app.js"
 ];
-
+ 
 var css = [
-    "./node_modules/jquery-mobile/css/structure/*.css",
-    "./node_modules/jquery-mobile/css/themes/default/jquery.mobile.icons.css",
-    "./node_modules/jquery-mobile/css/themes/default/jquery.mobile.theme.css"
+    "./node_modules/jquery-mobile/dist/jquery.mobile.css"
 ];
 
 var folders = [{
-    from: "./node_modules/jquery-mobile/css/themes/default/images",
+    from: "./node_modules/jquery-mobile/dist/images",
     to: "./public/css/"
 }];
 
@@ -30,7 +28,7 @@ gulp.task("default", async function(){
         .pipe(concat("style.css"))
         .pipe(gulp.dest("./public/css/"));
 
-    gulp.src(["./node_modules/jquery-mobile/css/themes/default/images/**/*.*"])
+    gulp.src(["./node_modules/jquery-mobile/dist/images/**/*.*"])
         .pipe(gulp.dest("./public/css/images"));
 });
 

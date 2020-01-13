@@ -5,18 +5,40 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <script type="text/javascript" src="js/script.min.js"></script>
+        <script type="text/javascript" src="js/script-min.js"></script>
     </head>
     <body>
-        <div data-role="page">
+        <div data-role="page" id="pag1">
             <div data-role="header">
-                <h1>Título</h1>
+                <h1>Uma página qualquer</h1>
             </div>
-            <div role="main" class="ui-content">
-                <p>Hello World!!</p>
-            </div>
-            <div data-role="footer">
-                <h4>Rodapé</h4>
+            <div data-role="content">
+                <ul data-role="listview" data-filter="true" data-inset="true">
+                    <li data-role="list-divider">
+                        Sudeste
+                        <span class="ui-li-count">4</span>
+                    </li>
+                    <li>
+                        <h3>Minas Gerais</h3>
+                        <p class="ui-li-aside">Capital: Belo Horizonte</p>
+                        <p>População: xx.xxx.xxx</p>
+                    </li>
+                    <li>
+                        <h3>São Paulo</h3>
+                        <p class="ui-li-aside">Capital: São Paulo</p>
+                        <p>População: xx.xxx.xxx</p>
+                    </li>
+                    <li>
+                        <h3>Rio de Janeiro</h3>
+                        <p class="ui-li-aside">Capital: Rio de Janeiro</p>
+                        <p>População: xx.xxx.xxx</p>
+                    </li>
+                    <li>
+                        <h3>Espírito Santo</h3>
+                        <p class="ui-li-aside">Capital: Vitória</p>
+                        <p>População: xx.xxx.xxx</p>
+                    </li>
+                </ul>
             </div>
         </div>
     </body>

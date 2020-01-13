@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script type="text/javascript" src="js/script-min.js"></script>
+    </head>
+    <body>
+        <div data-role="page" id="pag">
+            <div data-role="header">
+                <h1>Uma página qualquer</h1>
+            </div>
+            <div data-role="content">
+                <ul id="list" data-role="listview">
+                    <li><span>Banana</span></li>
+                    <li><span>Maçã</span></li>
+                    <li><span>Pera</span></li>
+                    <li><span>Laranja</span></li>
+                    <li><span>Morango</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <script>
+            $("#list").on("swiperight", ">li", function(event){
+                var li = $(this);
+                var span = li.children();
+                console.log("Excluindo " + span.html());
+
+                $(this).animate({
+                    marginLeft: parseInt($(this).css("marginLeft"), 10)===0 ? $(this).outerWidth() : 0
+                }).fadeOut("fast", function(){
+                    li.remove();
+                });
+            });
+        </script>
+    </body>
+</html>
